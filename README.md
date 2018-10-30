@@ -23,4 +23,4 @@ https://app-formulaire-thp.herokuapp.com/
 | Nom          |  Prenom  |
 | ------------ |:--------:|
 | AVRONSART    | Cyril    |
-| PINTO        | Floriant |
+| PINTO        | Florian  |
