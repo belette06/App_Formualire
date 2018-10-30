@@ -1,0 +1,73 @@
+<div class="jumbotron">
+  <h1>Remplie le formulaire!</h1>
+</div>
+
+
+<p>
+	<div>
+		<div class="card" style="width: 20rem;">
+	  		<div class="card-header">
+				<h3>Formulaire Form</h3>
+			</div>
+	 			 <ul class="list-group list-group-flush">
+
+					<form action="<%=users_path%>" method="post">
+		  				<li class="list-group-item"> Surname:<br/> <input type="string" name="username"></li>
+		 				<li class="list-group-item"> email: <br/><input type="string" name="email"></li>
+		 				<li class="list-group-item"> bio: <br/><input type="text" name="bio"></li>
+		 
+		 					 <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+		 				 <li class="list-group list-group-flush"><input type="submit" value="Submit"></li>
+		 			</form>
+		 		 </ul>
+			</div>
+	 	</div>
+	 </div>
+
+	<br /> <br />
+
+	<div>
+		<div class="card" style="width: 20rem;">
+	  		<div class="card-header">
+					<h3>Formulaire Form_tag</h3>
+					 <%= form_tag url_for(action: 'create'), method: "post" do %>
+				<ul class="list-group list-group-flush">
+	      			<li class="list-group-item"> <%= label_tag 'username:' %> <br /> 
+	      				<%= text_field_tag 'username'%></li>
+	     
+	     			 <li class="list-group-item"> <%= label_tag 'Email:' %>  <br /> 
+	      				<%= text_field_tag 'email' %></li>
+	     
+	      			<li class="list-group-item"> <%= label_tag 'Bio:' %><br /> 
+	     				 <%= text_area_tag 'bio' %></li>
+	    			 <br />
+	   				 <%= submit_tag "Create Utilisateur" %>
+
+	 				 <% end %>
+	 			 </ul>
+			</div>
+		</div>
+	</div>	
+
+	 <br /> <br />
+
+
+
+	<div>	
+		<div class="card" style="width: 20rem;">
+	  		<div class="card-header">
+						<h3>Formulaire Form_for</h3>
+						<%= form_for @user, url: {action: 'create'}, html: {class: "nifty_form"} do |f| %>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">Nom: <%= f.text_field :username %></li>
+						<li class="list-group-item">email:<%= f.text_field :email%></li>
+						<li class="list-group-item">Bio :<br /><%= f.text_area :bio %></li>
+						 <br />
+						<%= f.submit "Valider" %>
+					</ul>
+			</div>
+		</div>
+
+		<% end %>
+	</div>
+</p>	
